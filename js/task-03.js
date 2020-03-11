@@ -16,27 +16,42 @@ const images = [
   },
 ];
 
-const setMarkup = arr => {
-  const arrMarkup = arr.reduce((arrOfMarkup, image) => {
-    const elementRef = document.createElement('li');
-    elementRef.classList.add('list-item-js');
-    const imgRef = document.createElement('img');
-    imgRef.classList.add('list-item-img-js')
+// Вариант 1
+// const setMarkup = arr => {
+//   const arrMarkup = arr.reduce((arrOfMarkup, image) => {
+//     const elementRef = document.createElement('li');
+//     elementRef.classList.add('list-item-js');
+//     const imgRef = document.createElement('img');
+//     imgRef.classList.add('list-item-img-js')
 
-    elementRef.append(imgRef);
+//     elementRef.append(imgRef);
 
-    const atributes = Object.keys(image);
+//     const atributes = Object.keys(image);
 
-    for (const airibute of atributes) {
-      imgRef.setAttribute(airibute, image[airibute]);
-    }
+//     for (const airibute of atributes) {
+//       imgRef.setAttribute(airibute, image[airibute]);
+//     }
 
-    arrOfMarkup.push(elementRef);
-    return arrOfMarkup;
-  }, []);
+//     arrOfMarkup.push(elementRef);
+//     return arrOfMarkup;
+//   }, []);
 
-  const listRef = document.querySelector('ul#gallery');
-  listRef.append(...arrMarkup);
-};
+//   const listRef = document.querySelector('ul#gallery');
+//   listRef.append(...arrMarkup);
+// };
 
-setMarkup(images);
+// setMarkup(images);
+
+// Вариант 2
+const galleryRef = document.querySelector('ul#gallery');
+const arrOfInsertStrings = [];
+const classListItem = 'list-item-js';
+const classListItemImg = 'list-item-img-js';
+
+for (const image of images) {
+  arrOfInsertStrings.push(
+    `<li class="${classListItem}"><img class="${classListItemImg}" src="${image.src}" alt="${image.alt}"></li>`,
+  );
+}
+
+galleryRef.insertAdjacentHTML('beforeEnd', [...arrOfInsertStrings]);
