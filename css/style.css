@@ -1,0 +1,40 @@
+.task06, .task07 {
+  margin-bottom: 20px;
+}
+
+#boxes {
+  padding-bottom: 100px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0px auto;
+}
+
+.gallery-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.list-item-js {
+  flex: 0 0 380px;
+}
+
+.list-item-img-js {
+    max-width: 100%;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
