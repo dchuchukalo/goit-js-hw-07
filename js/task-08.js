@@ -12,6 +12,7 @@ const createBoxes = amount => {
   const basicSize = 30;
   const randomColor = () => Math.floor(Math.random() * 256);
   const arrOfDiv = [];
+  console.log(1)
 
   for (let i = 0 + arrOfDiv.lenght; i < amount + arrOfDiv.lenght; i += 1) {
     const div = document.createElement('div');
