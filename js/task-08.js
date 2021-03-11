@@ -13,7 +13,7 @@ const createBoxes = amount => {
   const randomColor = () => Math.floor(Math.random() * 256);
   const arrOfDiv = [];
 
-  for (let i = 0; i < amount + arrOfDiv.lenght; i += 1) {
+  for (let i = 0 + arrOfDiv.lenght; i < amount + arrOfDiv.lenght; i += 1) {
     const div = document.createElement('div');
     let size = basicSize + i * 10;
     div.style = `width: ${size}px; height: ${size}px; background-color: rgba( ${randomColor()} , ${randomColor()} , ${randomColor()} )`;
